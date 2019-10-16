@@ -8,13 +8,19 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class WelcomeUsersTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
+    /** @test */
     function it_welcomes_users_with_nickname()
     {
-        Create new user
+        $this->get('greet/luis/imyosoy')
+        	->assertStatus(200)
+        	->assertSee("Hello Luis, your nick is: imyosoy");
+    }
+
+    /** @test */
+    function it_welcomes_users_without_nickname()
+    {
+    	$this->get('greet/luis')
+    		->assertStatus(200)
+    		->assertSee("Hello Luis");
     }
 }

@@ -17,9 +17,10 @@ Route::get('/users/new', function() {
 });
 
 Route::get('/greet/{name}/{nickname?}', function($name, $nickname = null) {
+	$name = ucfirst($name);
 	if($nickname) {
 		return "Hello {$name}, your nick is: {$nickname}";
 	} else {
-		return "Hello {$name}, you don't have a nickname ";
+		return "Hello {$name}";
 	}
 });
