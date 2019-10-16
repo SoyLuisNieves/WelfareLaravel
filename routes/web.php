@@ -4,23 +4,10 @@ Route::get('/', function () {
 	return 'Home';
 });
 
-Route::get('/users', function() {
-	return 'Users';
-});
+Route::get('/users', 'UserController@index');
 
-Route::get('/users/{id}', function($id) {
-	return "Show details of user: {$id}";
-})->where('id', '[0-9]+');
+Route::get('/users/{id}', 'UserController@show')->where('id', '[0-9]+');
 
-Route::get('/users/new', function() {
-	return 'Create new user';
-});
+Route::get('/users/new', 'UserController@create');
 
-Route::get('/greet/{name}/{nickname?}', function($name, $nickname = null) {
-	$name = ucfirst($name);
-	if($nickname) {
-		return "Hello {$name}, your nick is: {$nickname}";
-	} else {
-		return "Hello {$name}";
-	}
-});
+Route::get('/greet/{name}/{nickname?}', 'WelcomeUserController@greet');
