@@ -1,0 +1,11 @@
+PUBLIC
+-Archivos publicos de la app
+
+{} - parametro dinamico
+
+TEST -> Feature: Simular peticiones http al servidor
+
+php artisan make:test UsersModuleTest
+php artisan make:controller UserController
+
+art view:clear - borrar vistas en cache

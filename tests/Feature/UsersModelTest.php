@@ -13,11 +13,19 @@ class UsersModelTest extends TestCase
      *
      * @test
      */
-    function it_loads_the_users_list_page()
+    function it_shows_the_user_list()
     {
         $this->get('/users')
         	->assertStatus(200)
         	->assertSee('List of Users');
+    }
+
+    /** @test */
+    function it_shows_a_default_message_if_the_users_list_is_empty()
+    {
+        $this->get('/users?empty')
+            ->assertStatus(200)
+            ->assertSee('Not found users :/');
     }
 
     
