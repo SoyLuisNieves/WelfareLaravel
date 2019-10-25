@@ -8,5 +8,11 @@ TEST -> Feature: Simular peticiones http al servidor
 php artisan make:test UsersModuleTest
 php artisan make:controller UserController
 php artisan migrate - Ejecutar migraciones
+php artisan migrate:reset - Ejecuta las migraciones aun cuando ya se hayan ejecutado
+php artisan migrate:refresh - Ejecuta un reset de todas las migraciones
+php artisan make:migration - Crea una nueva migracion, es recomendable crear una migracion cuando se quiera añadir algun campo a la tabla que estemos usando, asi evitaremos que haya perdida de datos
+php artisan migrate:rollback - Ejecuta el ultimo lote de migracion borrandolas para darnos pauta a ejecutarlas de nuevo con los cambios realizados
+
+
 
 art view:clear - borrar vistas en cache
